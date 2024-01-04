@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YDaLtJl39XjqVIvOHXfkrMjIKLKElEvfzoTN++7CZyYCeJpqxPQ+ChLiMdRXkS1SDA2UFfdz10O2DOVlqCE7+g==",
+  "success": true,
+  "projectFilePath": "/home/patrick/RiderProjects/EmailSender/EmailSender/EmailSender.csproj",
+  "expectedPackageFiles": [
+    "/home/patrick/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.0/microsoft.aspnetcore.app.ref.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
