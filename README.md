@@ -28,8 +28,15 @@ Ensure you have the following configuration in your `appsettings.json` file:
   "Name": "Receiver name",
   "Email": "Receiver email",
   "SmtpServer": "SMTP server address",
-  "SmtpPort": SMTP server port,
+  "SmtpPort": "SMTP server port",
   "SmtpUsername": "SMTP username",
   "SmtpPassword": "SMTP password"
 }
+```
+
+Once you configured the settings, run the the folowing commands:
+```
+dotnet restore
+dotnet build
+dotnet run
 ```
