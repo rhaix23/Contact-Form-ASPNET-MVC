@@ -25,12 +25,12 @@ Ensure you have the following configuration in your `appsettings.json` file:
 
 ```json
 "EmailConfiguration": {
-  "Name": "Receiver name",
-  "Email": "Receiver email",
-  "SmtpServer": "SMTP server address",
-  "SmtpPort": "SMTP server port",
-  "SmtpUsername": "SMTP username",
-  "SmtpPassword": "SMTP password"
+  "Name": "Receiver name", // String
+  "Email": "Receiver email", // String
+  "SmtpServer": "SMTP server address", // String
+  "SmtpPort": 587, // Integer (port number)
+  "SmtpUsername": "SMTP username", // String
+  "SmtpPassword": "SMTP password" // String
 }
 ```
 
