@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Mvc;
 using EmailSender.Models;
 using MailKit.Net.Smtp;
@@ -26,6 +27,12 @@ public class HomeController : Controller
     [HttpPost]
     public async Task<IActionResult> SendEmail(EmailViewModel model)
     {
+        // Sanitize inputs
+        string sanitizedSenderName = HtmlEncoder.Default.Encode(model.Name);
+        string sanitizedSenderEmail = HtmlEncoder.Default.Encode(model.Email);
+        string sanitizedBody = HtmlEncoder.Default.Encode(model.Body);
+
+        // Create the email message
         using MimeMessage message = new();
         
         // Set the sender address
@@ -39,9 +46,9 @@ public class HomeController : Controller
         
         // Set the email body
         string formattedBody = $@"
-        <p><strong>Sender:</strong> {model.Name}</p>
-        <p><strong>Sender Email:</strong> {model.Email}</p>
-        <p>{model.Body.Replace(Environment.NewLine, "<br>")}</p>";
+        <p><strong>Sender:</strong> {sanitizedSenderName}</p>
+        <p><strong>Sender Email:</strong> {sanitizedSenderEmail}</p>
+        <p>{sanitizedBody.Replace(Environment.NewLine, "<br>")}</p>";
         BodyBuilder emailBodyBuilder = new() { HtmlBody = formattedBody };
         message.Body = emailBodyBuilder.ToMessageBody();
         
@@ -69,6 +76,7 @@ public class HomeController : Controller
         catch (Exception ex)
         {
             _logger.LogError(ex.Message);
+            
             return RedirectToAction("Index");
         }
     }
