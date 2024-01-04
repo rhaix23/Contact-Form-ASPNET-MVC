@@ -34,7 +34,7 @@ Ensure you have the following configuration in your `appsettings.json` file:
 }
 ```
 
-Once you configured the settings, run the the folowing commands:
+After you configured the email configuration setting, run the the following commands:
 ```
 dotnet restore
 dotnet build
