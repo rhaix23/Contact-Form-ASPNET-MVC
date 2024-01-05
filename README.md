@@ -23,6 +23,7 @@ To get started, simply clone the repository and follow the configuration setup i
 ## Configuration Setup
 Ensure you have the following configuration in your `appsettings.json` file:
 
+### Using MailKit
 ```json
 "EmailConfiguration": {
   "Name": "Receiver name", // String
@@ -32,6 +33,17 @@ Ensure you have the following configuration in your `appsettings.json` file:
   "SmtpUsername": "SMTP username", // String
   "SmtpPassword": "SMTP password" // String
 }
+```
+
+### Using SendGrid
+```json
+"SendGrid": {
+    "ApiKey": "SendGrid Api Key", // string
+    "FromEmail": "Sender Email", // string
+    "FromName": "Sender Name", // string
+    "ToEmail": "Receiver Email", // string
+    "ToName": "Receiver Name" // string
+  }
 ```
 
 After you configured the email configuration setting, run the the following commands:
