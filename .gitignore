@@ -1,3 +1,4 @@
 /EmailSender/appsettings.Development.json
 .idea
 /EmailSender/obj
+/EmailSender/bin
